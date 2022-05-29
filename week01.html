@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="main.css" href="main.js">
+        <title>Portfolio</title>
+        <script>
+            function loadStory(){
+                var storyName = document.getElementById("name_input").value
+                var storyHTML = localStorage.getItem(storyName)
+                document.getElementById("story_editor").value=storyHTML
+            }
+
+            function saveStory() {
+                var storyName = document.getElementById("name_input").value
+                var storyHTML = document.getElementById("story_editor").value
+                localStorage.setItem(storyName,storyHTML)
+            }
+
+            function displayStory() {
+                var storyHTML = document.getElementById("story_editor").value
+                document.getElementById("story_display").innerHTML= storyHTML
+
+
+            }
+        </script>
+
+        <style>
+            textarea {
+                width: 800px;
+                height: 250px;
+                background-color: lightyellow;
+
+            }
+        </style>
+    </head>
+<body>
+    <h1>Notes for week 01</h1>
+    <hr>
+    <p>
+        <ol>
+            <li>Computers are stupid because they cannot remember anything, except they have been programmed to do so. </li>
+        <li>This is because, once an application stops, it forgets everything that it was doing.</li>
+        <li>Information stored or shared is an output and ones entered are inputs. Commonly called IO by tech experts.</li>
+    </ol>
+    </p>
+    
+    <h2>Code Example</h2>
+    <h1>Story Editor</h1>
+    
+    Story Name:<input id="name_input"></input>
+    <section>
+        <button onclick="loadStory()">Find and Edit</button>
+        <button onclick="saveStory()">Save it</button>
+        <button onclick="displayStory()">Display it</button>
+    </section>
+    <textarea id="story_editor" placeholder="Write your story here."></textarea>
+    <section id="story_display"></section>
+
+    <h2>
+        Understanding the example
+    </h2>
+    <p>
+        <ol>
+            <li>Javascript has functions that makes it easier to input, store and retrieve information </li>
+        <li>Variables are used to store key-value pairs.</li>
+        <li>Key value pairs have a relationship. The keys are usually the names/labels and the values are what they contain or what they are worth.</li>
+        <li>Items not properly labeled can cause confusions</li>
+    </ol>
+    </p>
+
+    <h3>Why Mobile First Design</h3>
+    <p>
+        <ol>
+            <li>Designing for the smallest devices leads to focus on functionality and design</li>
+            <li>Desktop computers took 30 years to peak. This means, developers spent 30 years designing PC first</li>
+            <li>The introduction of the iPhone changed the web development focus, from desktop first to mobile first</li>
+            <li>In 5 years, mobile sales surpassed desktop computers by a huge margin</li>
+            <li>People spend time surfing the web on phones than on laptops</li>
+            <li>Phones are typically replaced in 2 years, whereas desktops and laptops are replaced around its 4th year pr beyond</li>
+            <li>These days one person can be found to own two or more phones, whilst one or two computers are utilized by an entire household</li>
+        </ol>
+    </p>
+
+    <h3> Responsive Retrofitting</h3>
+    <p>
+        This is process is used to make a desktop-only site into a responsive one.
+        <ul>
+            <li>Pros</li>
+        </ul>
+        <ol>
+            <li>It is cheaper and faster than rewriting code from scratch</li>
+            <li>It gives better mobile experience than PC only</li>
+            
+        </ol>
+
+        <ul>
+            <li>Cons</li>
+        </ul>
+
+        <ol>
+            <li>Ot does not address screen real estate issues</li>
+            <li>It does not affect touch interaction issues</li>
+        </ol>
+    </p>
+
+    <h3>Why Mobile First?</h3>
+    <p> Mobile first design ensures that the built website or application is robust and responive. It does have only one draw back. 
+        It takes time, and rebuild can be costly. Its positives outweigh its negative. They are:
+
+        <ol>
+            <li>It provides the best experience across many devices</li>
+            <li>It addresses the constraints of size and bandwith</li>
+            <li>It is future friendly and ready for growth</li>
+        </ol>
+    </p>
+
+    <h2>Trend</h2>
+    <p>
+        <ol>
+            <li>Desktop sales have been declining since 2011</li>
+            <li>People use phones more than they use laptops or desktops</li>
+            <li>When designing, one can start small and scale up</li>
+        </ol>
+    </p>
+
+
+    <h3>Issues Encountered This Week</h3>
+    <p>
+        <ol>
+            <li>Setting Up Github has proved to be very frustating</li>
+            
+            <li>Sitepoint codes are taking forever</li>
+            <li>Difficult getting help</li>
+            <li>Okay, so I finally made it!</li>
+
+        </ol>
+    </p>
+
+</body>
+
+
+
+</html>

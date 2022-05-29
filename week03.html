@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel = "stylesheet" href="styles.css">
+    <title>WEEK 03 NOTES</title>
+</head>
+<body>
+    <header>
+        <h1>WEEK 03 NOTES</h1>
+    </header>
+    
+    <section>
+        <h2>Objects</h2>
+    <p>An object is a self-contained set of properties and values. For example, a laptop is an object that contains 
+      HDDs,SSDs and CPUs with values. A value with a property as a function is known as a method. Objects are usually used 
+      to contain related information with the same or similar functionality in one box. Objects represent real world objects in a virtual
+      world.
+    </p>
+</section> 
+      <section id="objEx">
+          <h3>Example of object literal</h3>
+          <p>
+            <strong>
+      const nanaKwame = {<br>
+          firstName: "Nana Kwame ",<br>
+          lastName: "Dickson",<br>
+          age:25<br>
+          school:byui,<br>
+          nationality: Ghana   <br>       
+      };
+    </strong>
+          </p>
+    </section>
+  
+    <section>
+        <p>
+            An object literal can easily be created by using curly braces {}.<br> It is also possible to create an object with the constructor
+            function; nana = new Object()
+        </p>
+
+    </section>
+    <h3>Accessing Properties</h3>
+    <p>Properties can be accessed in two ways. One way is by the dot notation(nana.name) and the other is by using square brackets (nana ['name'])</p>
+
+    <h3>Computed Properties</h3>
+
+    <p>JavaScript code can be put in square brackets[] and the property key will return the value of that code. <br>
+        <section id="objEx">
+            <h3>Example of Computed Properties</h3>
+              <strong>
+                const hulk = { name: 'Hulk', ['catch' + 'Phrase']: 'Hulk Smash!' };<br>
+                << { name: 'Hulk', catchPhrase: 'Hulk Smash!' }   
+        };
+      </strong>
+            </p>
+      </section>
+
+      <h3>Finding all the Properties of an Object</h3>
+      <p>
+          We can loop through properties using the <em>for in</em> loop. We can use the example below to loop through all the 
+          properties of the object <strong>superman.</strong>
+
+          for(const key in superman) {
+            console.log(key + ": " + superman[key]);
+        }
+        << "name: Superman"
+        << "real name: Clark Kent"
+        << "height: 75"
+        << "weight: 235"
+        << "hero: true"
+        << "villain: false"
+        << "allies: Batman,Supergirl,Superboy"
+        << "fly: function (){
+            console.log(\"Up, up and away!\");
+        }"
+
+      </p>
+
+      <h3>Adding and Removing Properties</h3>
+      <p>Properties can be added to objects at anytime. One can simply do this by assigning a value to a property. For instance;
+          adding a value of spouse to the object nana would be,<strong id="objEx"> nana.spouse = Jane. This would return << "Jane"</strong>
+
+          Properties can be removed with the delete button. One can use the <em> delete</em> operator. Example, <em>delete</em> nana.spouse.
+              </p>
+
+              <h3>Nested Properties</h3>
+
+              <p>JavaScript objects can contain other objects as well. These are called nested objects.
+
+                <section id="objEx">
+                    <h3>Example of Nested Objects</h3>
+                      <strong>
+                        const jla = {<br>
+                            superman: { realName: 'Clark Kent' },<br>
+                            batman: { realName: 'Bruce Wayne' },<br>
+                            wonderWoman: { realName: 'Diana Prince" },<br>
+                            flash: { realName: 'Barry Allen' },<br>
+                            aquaman: { realName: 'Arthur Curry' },<br>
+                        }
+                };
+              </strong>
+            </section>
+
+            <h3>Name Spacing</h3>
+            <p> Name spacing is done in JS programming to prevent name collisions from occuring. Because developers use libraries
+                some common names may be repeated. When this happens, there will be a problem when executing a code.
+                This is remedied by using a name space. To create a name space, a variable has to be created to house the object.
+                To be able to use the object with a common name, you need to invoke the variable name along with the object name
+                with the dot notation
+
+                <section id="objEx">
+                    <h4>Example</h4>
+                    <strong>
+                    const myMaths = {<br>
+
+                        square(x) {<br>
+                            return x * x;<br>
+                        },<br>
+                        mean(array,callback) {<br>
+                            if (callback) {<br>
+                            array.map( callback );<br>
+                            } <br>
+                            const total = array.reduce((a, b) => a + b);<br>
+                            return total/array.length;<br>
+                        }<br>
+                    };
+                </strong>
+                </section>
+            </p>
+
+
+            <h3>JavaScript Object Notation (JSON)</h3>
+            <p>JSON is used by many services for data serialization and configuration. It is used for exchange of information
+                betwen web services. It is used by big websites like Facebook, Twitter and Trello. <br>
+                JSON is both machine and human readable. The key differences to note is that, Property names must be double-spaced,
+                permitted values are double-quoted strings, numbers, true, false, null, arrays and objects and Functions are not permitted values.
+                The parse() method takes a string of data in JSON format and returns a JavaScript object.<br>
+                <br>
+                <strong>Document Object Module (DOM)</strong><br>
+        The Document Object Model (DOM) permits you to get to components of a site page and empower connection with the page by adding and eliminating components, changing the request, content and traits of components, 
+    and even its style is adjusted.
+
+    DOMS are able to access an HTML page by using the document.getElement. Examples include. <em>document.getElementById, 
+        document.getElementByTagname, document.getElementByClassName
+    </em>
+<h3>Query Selector</h3>
+The document.querySelector() method allows for the use of CSS notation to find the first element
+ in the document that matches that matches a CSS selector that has been provided as an argument.
+  .If it cannot match any elememts, it returns null.
+
+The document.querySelectorAll() method also uses CSS notation but returns a node list of all the elements in the
+ document that match the CSS query selector. If no elements match, it will return an empty node list.
+
+ <h3>Navigating the DOM Tree</h3>
+Node objects have a number of properties and methods for navigating around the document tree. Once an element has been referenced, 
+other nodes can be found on the document tree.
+ Example. The relationship each node has with the Batman node is shown below.
+
+ <section id="objEx">
+    <h4>Example</h4>
+    <strong>
+        const heroes = document.getElementById('roster');<br>
+
+        heroes.childNodes<br>
+        NodeList [#text "<br>
+        ", <li class="hero">, #text "<br>
+        ", <li id="bats">, #text "<br>
+        ", <li class="hero">, #text "<br>
+        ", <li class="hero">, #text "<br>
+</strong>
+</section>
+<em>childNodes</em> property returns all the nodes that are children of an element. This includes text nodes,
+ and since whitespace is treated as a text node, there will be empty text nodes in the collection in the example above.
+</p>
+
+<h3>EVENT LISTENER</h3>
+<p>An event listener is code that listens all the time for a mouse click, keypress or a touch input. An event listener 
+    calls a function when a part of a webpage is clicked on and has something to do. Until that happens, the code will continue to run.
+    The recommended way of dealing with events is to use event listeners.
+    The addEventListener() method is called on a node object, the node to which the event listener is being applied.
+    The addEventListener() method can also be called without a node,
+    in which case it is applied to the global object, which is often the whole browser window.
+
+    <section id="objEx">
+        <h4>Event Listener Example</h4>
+        <strong>
+
+    function doSomething() {<br>
+        alert('You Clicked!');<br>
+        }<br>
+        
+        addEventListener('click',doSomething);
+    </strong>
+</section>
+
+Event listeners can be removed using the removeEventListener() method. Default behavior can also be stopped with the 
+preventDefault() method.
+</p>
+
+<h2>Object Methods "this"</h2>
+<p>Usually, object methods need access to information in an object to perform tasks. "this" method is used to access an object.
+    Usually, using a variable and a dot notation of the object method makes it possible to access information in an object,
+    however, this method is not reliable. There will be a collision if another object bears the same name. This is where the "this"
+    method comes in handy.
+
+    <section id="objEx">
+        <h4>Example</h4>
+        <strong>
+            let user = { <br>
+                name: "John", <br>
+                age: 30,<br>
+              
+                sayHi() {<br>
+                  alert( user.name ); // leads to an error<br>
+                }<br>
+              
+              };
+              
+              
+              let admin = user;<br>
+              user = null; // overwrite to make things obvious<br>
+              
+              admin.sayHi(); // TypeError: Cannot read property 'name' of null<br>
+              
+        </strong>
+    </section>
+In JavaScript, <em>this</em> can be used in any function, even if it is not a method of an object. "this" is evaluated during run-time.
+
+<section id="objEx">
+    <h4>Example</h4>
+    <strong>
+let user = { name: "John" };<br>
+let admin = { name: "Admin" };<br>
+
+function sayHi() {<br>
+  alert( this.name );<br>
+}
+
+// use the same function in two objects<br>
+user.f = sayHi;<br>
+admin.f = sayHi;<br>
+
+// these calls have different this<br>
+// "this" inside the function is the object "before the dot"<br>
+user.f(); // John  (this == user)<br>
+admin.f(); // Admin  (this == admin)<br>
+
+admin['f'](); // Admin (dot or square brackets access the method – doesn't matter)
+</strong>
+</section>
+This method comes in handy and prevents collisions. The arrow function has not "this" method.
+</p>
+</body>
+</html>

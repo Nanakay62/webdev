@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel = "stylesheet" href="styles.css">
+    <title>WEEK 04 NOTES</title>
+</head>
+<body>
+    <header>
+        <h1>WEEK 04 NOTES</h1>
+    </header>
+    
+    <body>
+        <h2> FORMS</h2>
+        <p> <form> us an element that contains controls such as input, select menus and buttons.
+            These inputs can be filled and then be processed once the form has been sumbitted.
+            Back end languages such as Ruby and PHP are used to process forms that are submitted. However, it is now possible
+            to process the form with JavaScript. Each form value can be specified in HTML
+
+            <br>
+            <h3>Example</h3>
+            form name='search' action='/search'><br>
+                input name='searchInput'><br>
+                button type='submit'>Search</button>
+            /form> <br>
+            <form name='search' action='/search'>
+                <input name='searchInput'>
+                <button type='submit'>Search</button>
+            </form>
+
+            <h2>Accessing Form Elements</h2>
+            Legacy DOM had property called document.forms that returns an HTML collection the forms in the 
+            document in the manner they appear in the markup. An example is the use of the index notation to return the first form object, in this way:
+             const form = document.forms[0];
+             <br>
+             The equivalent of the above example is this; const form = document.getElementsByTagname('form')[0];
+
+             <h2>Form Events</h2>
+
+             Forms trigger a number of events like those discussed in the last chapter. Some of these events are exclusive to forms.
+             The focus event occurs when an element is focused on. With an input element,
+             when the cursor is placed inside the element by clicking or navigating it using the keyboard.
+             An example is the code below;<br>
+             <br>
+             <strong>
+                const input = form.elements.searchInput;<br>
+                input.addEventListener('focus', () => alert('focused'), false);<br>
+                input.addEventListener('blur', () => alert('blurred'), false);<br>
+                input.addEventListener('change', () => alert('changed'), false);<br>
+                <br>
+            </strong>
+
+                The blur event happens when the focus is away from the form element,wheras the change occurs when the focus moves away from
+                a form element after changing it.
+
+                <h2>Submitting A Form</h2>
+
+                The most important event is the 'submit' attribute. It occurs when a form is submitted. It sends the content of a form 
+                to a server to be processed. However, this can be intercepted with JavaScript by using the submit event before a form is sent.
+                <br>
+                <strong>Code Example</strong>
+                const form = document.form['search']<br>
+                form.addEventListener('submit', search, false);<br>
+                <br>
+                A form can be prevented from being submitted to the URL using the preventDefault() method.
+
+                <h2>Retrieving and Changing Values From a Form</h2>
+                Text element objects have a value property that can be used to retrieve the text inside the field. It is used to 
+                report back what the user searched for.
+
+                <strong>Example</strong>.
+                <br>
+                <strong>
+                function search(event) {
+                    alert(`You Searched for: ${input.value}`);
+                    event.preventDefault();
+                }
+            </strong>
+
+            <section>
+            <h2>Form Controls</h2>
+            There are various types of form controls. The common ones are, <strong> <em>, select, textarea and button.</em></strong>
+
+            <h3>Text input Fields</h3>
+            These are fields used to type in short pieces of texts like username. They are usually found in login forms.
+            <br>
+            <h3>Password Fields</h3>
+            The input type ="Password" is used to create fields used to enter passwords and secret information.
+
+            <h3>Checkbox</h3>
+            Checkboxes are created using the type ="Checkbox". They are used to select a variety of options on the checkbox.
+
+            <h3>Radio Button Input Fields</h3>
+            They are like checkboxes. This is because they allow users to check an option as 'true', but they provide 
+            exclusive choices of options.
+
+            <h3>Text Area</h3>
+            The text area is used to enter long pieces of text over multiple lines such as comments and blog posts. They work in the same
+            way as input fields. They are accessed using the anme attribute and the value property.
+
+            <h3>Button</h3>
+            Buttons are used to submit a form. The default type for a button is 'submit'. The other default is 'button'
+            This does nothing in paticular but can be added to an event listener.
+
+            <h3>Conclusion (Other Input Types)</h3>
+            There are other input types such as number, tel and color. These can be added to the other form controls to make 
+            a solid form.
+        </section>
+
+
+            <h2>Form Validation</h2>
+            This process is used to verify that a user has entered information into the forms correctly.
+            This ensures that;
+            <ul>
+            <li>an email address is valid</li>
+            <li>a password is entered correctly and has the minimum characters are entered</li>
+            <li>a number is entered when numerical data is required</li>
+            <li>a required field is completed</li>
+         </ul>
+
+
+         <h2>Object Oriented Programming</h2>
+         The OOP is used to model representations of the real world objects. It has 3 main concepts, which are encapsulation, polymorphism
+         and inheritance.
+
+
+         <h3>Encapsulation, Polymorphism and Inheritance</h3>
+         This involves keeping all programming logic in one object and only making methods available, whilst polymorhism means objects
+         have the same methods  but have the ability to override shared methods with specific information. Inheritance means an object can take 
+         the feeatures of another object and add more features to it to make it even better.
+
+         <h3>Classes</h3>
+         They are used to define the blue print for an object.
+
+         <h3>Constructor Functions and Properties</h3>
+         An alternative way to create objects is to use the constructor function. It defines the methods and properties of an object.
+         The easiest way to create a new object is to use the literal syntax. Every object has a constructor property that returns the constructor
+         function that created it.
+
+
+         <h3>Static Methods</h3>
+         The static keywordis used in class declarations to create a static method. It can be called directly by class rather than the instance of the class.
+
+         <h3>Proptotypal Inheritance and Prototype Property</h3>
+         This means that every class has a prototype property that is shared by all instances of a class. All classes and constructor 
+         functions have a prototype property that returns an object. An object can override properties or methods by assigning new values to them.
+
+         <h3>Public and Private Methods</h3>
+         JavaScript methods are public by default. If methods can be queried directly, and changed by assignment, it is public. 
+
+         <h3>Enumerable Properties</h3>
+         Properties of objects in JavaScript are either numerable or non-numerable. Non-numerable objects dont show up in a <em>for-in</em> loop.
+
+        <h3>Creating Objects From Objects</h3>
+        We can avoid using classes altogether, and create new objects based on another object that acts as a prototype
+         instead.
+
+The Object() constructor function has a method called create that can be used to create a new object that is an exact 
+copy of the object that is provided as an argument. The object that is provided as the argument acts 
+as the prototype for the new object.
+For example, we can create a Human object that will form the basis for other Human objects.
+It is created as an object literal:
+
+const Human = {
+arms: 2,
+legs: 2,
+walk() { console.log('Walking'); }
+}
+
+<h3>Object Based Inheritance</h3>
+The Human object can also act like a ‘super-class’, and become the prototype of another object called Superhuman. 
+This will possess the properties and methods that the Human object has, but with some extra methods:
+const Superhuman = Object.create(Human);
+
+Superhuman.change = function() {
+return `${this.realName} goes into a phone box and comes out as ${this.name}!`;
+};
+
+<h3>Mixins</h3>
+A mixin is the addition of properties and methods of some objects to another object without using inheritance.
+ It allows more complex objects to be created by ‘mixing’ basic objects together.
+Basic mixin functionality is provided by the Object.assign() method. 
+This will assign to the object provided as the first argument all of the properties from any objects provided as further arguments:
+
+const a = {};
+const b = { name: 'JavaScript' };
+Object.assign(a,b);
+<< { name: 'JavaScript' }
+
+a.name
+<< 'JavaScript'
+
+<h3>Chaining Functions</h3>
+If a method returns this, its methods are able to be chained together to form a
+ sequence of method calls that are called one after each other. 
+ For example, the superman object can call all three of the superpower methods at once:
+
+Copy
+superman.fly().move().xray();
+<<  Up, up and away! Superman soars through the air!
+    Superman can move faster than a speeding bullet!
+    Superman can see right through you!
+This is a technique that JavaScript libraries, like jQuery use.
+ It makes code more concise by keeping multiple method calls on the same line,
+  and with some clever method naming it can make the calls read almost like a sentence;
+   the Jest testing library that we used in Chapter 10 makes use of this.
+
+The big issue with this technique is that it can make code more difficult to debug. 
+If an error is reported as occurring on a particular line, 
+there is no way of knowing which method caused the error, since there are multiple method calls on that line.
+        </p>
+<h2>Modern JavaScript Development</h2>
+<h3>Libraries</h3>
+A JavaScript library is a piece of code that provides several methods that make it easier to achieve common tasks.
+ JavaScript is an extremely flexible language that can accomplish most programming tasks – but 
+ not all undertakings are as easy to do as they should be.
+  A library will abstract functionality into easier-to-use functions and methods. These can then be used to complete common tasks without having to use lots of repetitive code.
+
+<h3>DOM Manipulation Example</h3>
+A good example of how libraries can help save time is in DOM manipulation. The DOM API provides all the tools required to manipulate the DOM, but some can be verbose and take several lines of code to attain even the most basic of tasks.
+
+For example, if we wanted to add a class to a paragraph element referenced by the variable para, then append another paragraph on the end, we could do it using the following:
+
+Copy
+para.classList.add('important');
+const newPara = document.createElement('p');
+newPara.textContent = 'Another Paragraph';
+para.appendChild(newPara);
+
+
+<h3>jQuery</h3>
+It is the most popular JavaScript library.
+ As seen in these statistics on W3Techs and Built With.. It is used in a huge number of commercial websites and
+  has a plugin system that makes it easy to extend and use to build common web page elements, such as a lightbox or carousel widget.
+  A big advantage of using jQuery is its support for older browsers. To support
+   these browsers then jQuery could save a programmer a lot of time. 
+   For example, classList isn't supported in older versions of Internet Explorer, so you'd have to write your own polyfill code to fix it.
+   But if jQuery is used, you'd just have to use the addClass() method and it would make sure the code worked in most browsers.
+
+  <h3>Modular JavaScript</h3>
+A module is a self-contained piece of code that provides functions and methods that can then be used in other files 
+and by other modules. This helps to keep code organized in separate, reusable files, which improves code maintainability. 
+The code in a module ought to have a solitary reason, and gather capacities with unmistakable usefulness. For instance, you could keep any capacities utilized for Ajax in their own module. This could then be utilized in any activities where Ajax was required. Keeping code particular assists with making it all the more approximately coupled and tradable, meaning you can undoubtedly trade one module for one more without influencing different pieces of a task. To be sure, little single-reason modules are the specific inverse of huge solid libraries as they empower engineers to utilize just the modules that are required, staying away from any squandered code.
+ Modules likewise permit a public API to be uncovered, while keeping the execution stowed away inside the module.
+
+
+ <h3>MVC Frameworks</h3>
+Model-View-Controller (MVC) is a plan design that has been utilized for quite a while in server-side dialects. 
+It's a typical approach to planning programming, and utilized by server-side structures like Ruby On Rails and Django.
+ As of late it has been utilized in JavaScript code to make it simpler to put together enormous scope web applications.
+
+MVC isolates an application into three particular, free parts that connect with one another:
+<ul>
+<em><li>Models</li></em> are objects that carry out the usefulness for making, perusing, refreshing and
+ erasing (known as CRUD errands) explicit snippets of data about the application, as well as some other related rationale and conduct. In a daily agenda application, for instance, there would be an assignment model giving strategies to get to all the data about the errands like names, due dates and got done with jobs. This information will frequently be put away in a data set or another holder.
+
+<em><li>Visual</li></em> give a visual portrayal of the model appearance all the applicable data. In a web application, this would be the HTML shown on a site page. Sees likewise give a way to clients to cooperate with an application, generally through structures. In a daily agenda application, the perspectives would show the assignments as a HTML list with checkboxes that a client could tick to say an undertaking had been finished.
+
+<em><li>Controllers</li></em>connect models and perspectives together by imparting between them. They answer occasions, which are typically inputs from a client (entering a few information into a structure, for instance), process the data, then update the model and view appropriately. In a daily agenda application, the regulator capacities would answer the occasion of a client tapping on a check box and afterward illuminate the model that an undertaking had been finished. The model would then refresh the data about that assignment.
+</ul>
+
+<strong>Example</strong>
+<br>
+'use strict'<br>
+
+const form = document.forms[0];<br>
+
+class Item {<br>
+    constructor(name) {<br>
+        this.name = name;<br>
+    }<br>
+}
+
+<h3>Templates</h3>
+Numerous MVC systems use templating dialects to embed dynamic information into the page.
+ Formats can be written in HTML or another dialect, for example, markdown, which arranges into HTML.
+  They can be entire pages, however, are in many cases just partials — portions of a page. 
+  This implies that the application can refresh part of the page without making a solicitation 
+  to the server, saving an HTTP demand. This is generally finished by powerfully embedding the piece of HTML into the DOM.
+  <br>
+
+Templating dialects permit HTML to be isolated from the JavaScript program, making upkeep more straightforward 
+in light of the fact that they're not generally firmly coupled. The formats are much of the time put away in discrete documents or inside their own content labels, so they can be reused and rapidly altered in one spot assuming that changes should be made. It additionally implies that embedding huge strings of HTML into a record (which can unfavorably affect execution) is stayed away from. 
+All that is required is a reference to the pertinent record that contains the format.
+
+<h3>Package Managers</h3>
+Package Managers
+As modules have become more widely used in JavaScript, there’s been a need for tools to manage them.
+ Package managers allow developers to download modules from a central repository.
+  A package is just a directory with one or more files of code, as well as a package.json file that contains information about the code in the package. Developers can also share any modules they create by uploading them to the central repository for others to use. A package manager makes it easy to install, upgrade and remove any packages that are used in a project. 
+They also allow you to manage different versions of packages.
+
+<h3>Content Delivery Networks</h3>
+Content conveyance organizations (CDNs) are frameworks of disseminated servers that can convey web assets, 
+for example, JavaScript, CSS, or picture documents to a client in light of their geographic area. 
+This implies they're ready to convey the substance rapidly and proficiently with a serious level of accessibility.
+ These assets additionally get reserved on the client's machine, implying that fewer demands should be made to download the asset.
+  This is especially helpful while involving a CDN for a famous library like jQuery. This is on the grounds that once the client has downloaded the record from a webpage, it will be reserved,
+ and can then be involved again by different destinations without the requirement for another organization's demand.
+
+
+ <h3>Deploying JavaScript</h3>
+ With regards to sending your JavaScript program, now is the right time to ponder improving the code.
+  Assuming a programmer utilized various outside libraries and loads of modules, he could have countless documents that should be remembered for your HTML record. 
+  One approach to doing this is to just incorporate an alternate script> tag for each JavaScript record. Be that as it may, this isn't ideal for various reasons:
+    </body>
+
+    </html>

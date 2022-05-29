@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<meta charset ="utf-8">
+
+<body>
+<h1>WEEK05 NOTES</h1>
+<hr>
+<p>
+<h2>Testing an Debugging </h2>
+
+
+Testing and debugging are things common to programming. Usually, when developers write code, they test it to look out for errors and debug it if any are found.
+
+<h2>Errors, Exceptions, and Warnings </h2>
+An error occurs when there is an issue with the written code. They are usually caused by one of the following;
+<br>
+<ul>
+<li><em><strong>System errors</strong>- which indicates that there is a problem with the system or external devices that the program is interacting with.</em></li>
+<li><em><strong>Programmer errors</strong> - This type of error indicates that there is a problem with the syntax.</em></li>
+<li><em><strong>User errors</strong> - occur when a user enters data incorrectly or the system is unable to handle it.</em></li>
+</ul>
+
+System errors are usually out of the control of the programmer, however, programmers should be aware of this and try to minimize the impact. 
+Programmer errors are caused by programmers, and hence, must ensure that code is written error free. User errors can be minimized by predicting the errors users
+can make, and write code to minimize them.
+
+<h2>Exceptions</h2>
+An exception error is returned when a program runs a method or function that is non-existent. This type of error can be used by the program to deal with the error.<br>
+An Example.<br>
+<strong>
+<em>
+unicorn();<br>
+ReferenceError: unicorn is not defined
+</em>
+</strong>
+<h2>Stack Traces</h2>
+A stack trace error is a sequence of method calls that leads to the point where an error occurred. Sometimes, multiple functions are the causes of an error, and 
+stack trace traces it to the original error.
+<strong>
+<br>
+Example<br>
+<em>
+function three(){ unicorn(); }<br>
+function two(){ three(); }<br>
+function one(){ two(); }<br>
+one();<br>
+
+index.html:13 Uncaught ReferenceError: unicorn is not defined<br>
+    at three (index.html:13)<br>
+    at two (index.html:17)<br>
+    at one (index.html:21)<br>
+    at index.html:24`<br>
+	</em>
+</strong>
+
+<h2>Warnings</h2>
+Warnings occur when there is an error that is not significant enough to cause a program to crash. A program may continue to run, however, if the warning is left
+unchecked, it may cause the program to run incorrectly. When a run time error occurs, the HTML code works but the JavaScript stops working. However, when a warning
+occurs, the JavaScript run, but possibly, incorrectly.
+
+<h2>The Importance of Testing and Debugging</h2>
+JavaScript is a language that may ignore errors and still run silently in the back. This may make the programs run incorrectly because an error was not spotted.
+Programmers should write codes where errors can be spotted, so that they can be fixed to make the program run correctly. This will ensure that user experience is 
+not affected.
+
+<h2>Strict Mode</h2>
+Strict mode produces more errors and prevents the use of depracted features. This is because it sees the old practices that were accepted are considered 'poor style'
+or actual errors. This mode ensures quality production, clarity and speed. It helps programmers to write a high quality code, but not sloppy ones. Sloppy mode
+is forgiving and allows errors. This may impact on the quality negatively. Strict mode usually requires the addition of <em>'use strict';</em> to the JS file. This
+will then be picked up by the JS engine that runs strict mode. If it does not,it will be ignored.
+
+<h2>Linting Tools</h2>
+These are tools that ensure that a programmer adheres to the programming rules, be it syntax or indenting. Linting tools are unforgiving. They enforce the
+programming style guide.
+
+<h2>Feature Detection</h2>
+The best way to check whether a browser supports a certain feature is to use feature detection. It works by checking whether an obejct or method call exists using the "if'
+condition before trying to call the feature. For example if one wanted to know a browser supported a new function, let's say, an imaginary <strong><em>marsCity</em></strong>,
+we would wrap method calls with an <em>if</em> block. Like so; <br> if (window.marsCity) {<br>
+    virtualReality.activate();
+} 
+
+<h2>Debugging in the Browser</h2>
+Debugging is the process of finding where an error occurs in a code to fix it. Sometimes, an error in a code may occur, but does not originate from the spot 
+in which it occurred. Running the program at various stages of execution will help know step by step how it occurred. It is useful to create breakpoint when debugging.
+This stops the code at various points so one can see wha happens at each stage of execution.
+
+<h2> Trusty Alert</h2>
+The alert() is the most basic method of debugging. It is a method to show a dialog at certain points in the code. Since alert() stops a program from running 
+until OK is clicked, it allows us to effectively put breakpoints inthe code that let us check the value of variables at that point to see if they’re what we expect
+them to be. Take the following example that checks to see if a person’s age is appropriate:
+ <br>
+<em>
+function amIOldEnough(age){ <br>
+    if (age = 12) { <br>
+        alert(age); <br>
+        return 'No, sorry.'; <br>
+    } else if (age less than 18) { <br>
+        return 'Only if you are accompanied by an adult.'; <br>
+    } <br>
+    else { <br>
+        return 'Yep, come on in!'; <br>
+    } <br>
+}
+</em>
+
+<h2>Using the Console</h2>
+A lot of modern JavaScript environments have a console object that provides a number of methods for logging information and debugging.
+ It's not officially part of the ECMAScript specification, but is well supported in all the major browsers and Node.js.
+The console.log() method is familiar. This can be used to log the value of variables at different stages of the program, although it will not
+actually stop the execution of the program like alert() does.
+ For example, we could add some console.log() statements in the amIOldEnough() function, to log the position in the function as well as the value of the age variable:<br>
+ 
+ <em>
+ function amIOldEnough(age){<br>
+    console.log(age);<br>
+        if (age less than 12) {<br>
+        console.log(`In the if with ${age}`);<br>
+        return 'No, sorry.';<br>
+        } else if (age less than 18) {<br>
+        console.log(`In the else-if with ${age}`);<br>
+        return 'Only if you are accompanied by an adult.';<br>
+        } else {<br>
+        console.log(`In the else with ${age}`);<br>
+        return 'Yep, come on in!';<br>
+    }<br>
+}
+ </em>
+ <h2>Debugging Tools</h2>
+ Most modern browsers also have debugging tools that allows users to set breakpoints in their code that will pause it at certain points. The values of all the variables at those points and modify them.
+ This can be very useful when trying to track down bugs. Here are the links to the debugger documentation for each of the major browsers: firefox, chrome, saferi and edge.
+ 
+ <h2>Error Objects</h2>
+ An error object can be created when an exception occurs, or can be created in a code using the constructor function.
+ An example of a constructor function is <em>const error = new Error();</em>. This function has can take a parameter and use it as an error message.<em>const error = new Error('Oh there is a problem with your code.');</em>
+ <br>
+ There are 7 more error objects used for specific errors, which are;EvalError, RangeError,ReferenceError,SytntaxError,TypeError,URIError and InternalError.
+ 
+ <h2>Exceptional Handling</h2>
+ This error shows a message and terminates a running program. When this happens in development. It allows the developer to identifty and fix errors.
+ However, if this happens in production, the program crashes and does not look good on the programmers reputation. Errors can be handled well by catching the error.
+ 
+ try, catch, and finally
+If we suspect a piece of code will result in an exception, we can wrap it in a try block. This will run the code inside the block as normal, 
+but if an exception occurs it will pass the error object that is thrown onto a catch block. Here’s a simple example using our squareRoot() function from earlier:
+
+<em>
+function imaginarySquareRoot(number) {<br>
+    'use strict';<br>
+    try {<br>
+        return String(squareRoot(number));<br>
+    } catch(error) {<br>
+        return squareRoot(-number)+'i';<br>
+    }<br>
+}
+</em>
+
+<h2>Tests</h2>
+Tests are often overlooked in programming. Tests enables programmers to be identify errors early.It ensures that piece of code runs as it should function 
+itSquareRoots4() {<br>
+    return squareRoot(4) === 2;<br>
+}
+
+<h2> Test Driven Development </h2>
+This is the process where tests are written before actual code. These tests usually fail in the initial stages, because there is no code to test. The next step
+is to write some code for the tests to pass.After this the code is refactored to make it more readable to remove any form of repetition.The code is tested 
+at various stages to make sure that it works. This process should be done in chunks.
+<ul>
+<li> Write tests</li>
+<li> Write code to pass the tests</li>
+<li> Refactor code</li>
+<li> Test refactored code</li>
+<li> Write more tests for more features</li>
+</ul>
+Test-driven development is considered by many in the industry to be the best practice, however most developers tend to be more pragmatic when it comes to writing tests.
+ The TDD mindset can be hard to always use, and at the end of the day, any tests are better than no tests at all.
+
+</p>
+</body>
+
+
+
+
+
+
+
+</html>

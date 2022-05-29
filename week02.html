@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="main.css" href="main.js">
+        <title>Week 2 Notes</title>
+    </head>
+
+    <body>
+        <h1>Programming Basics</h1>
+        <p>Programming is about making a computer do what you want. Making a program means giving a computer a set of 
+            instructions to perform a task.
+        </p>
+
+        <h2>Comments</h2>
+        <p>A piece of code ignored by the language. Comments are made to make anyone who is reading the code understand what is going on.
+            In Javascript, there are two types of comments. They are;
+            <ul>
+                <li><bold>//</bold> for single line comments</li>
+                <li><bold>/* & */</bold> for multi-line comments</li>
+            </ul>
+            Writing comments in code is good practice.
+        </p>
+
+        <h2>JS Grammer</h2>
+        <p>Javascript is made up of statements that end with a semicolon(;) or with a new line.
+            It is not mandatory to use a semi-colon to statements written in JS, since the language has an Automatic Semi-colon Insertion
+            Process (ASI). This process attempts to place semi-colons at the end of each statement. This however, may lead to errors and 
+            cause automated services like minifiers and validators not to work properly.
+        </p>
+
+        <h2>Block</h2>
+        <p>A block is a series of statements collected inside curly brackets.<br> Example; <br>
+             {<br>
+                 const = "Hello world";<br>
+                 alert(message);<br>            
+        }</p>
+
+        <h2>Reserved Words</h2>
+        <p>Reserved words are ones that cannot be used as variable names. These include; char, default, byte, boolean, delete etc.</p>
+
+        <h2>Primitive Data Types</h2>
+        <ol>
+            <li><bold></bold>String</li>
+            <li><bold></bold> Boolean</li>
+            <li><bold></bold> Numbers</li>
+            <li><bold></bold>Undefined</li>
+            <li><bold></bold> Null</li>
+            <li><bold></bold> Numbers</li>
+        </ol>
+
+        <h2>Variables</h2>
+        <p>They are used to refer to a value that is stored in memory
+            Javascript uses "const" and "let" to declare variables. The "=" sign is used to assign a variable
+            When a const is used, a variable cannot be reassigned, however, when "let" is used, the variable may be reassigned.
+            Both are block scoped and hence, exist inside the blocks in which they are declared.
+            <br>
+            A variable that starts with an underscore _ refers to private properties and methods. $ is used in JQuery.
+        </p>.
+        <h3>Soft Equality and Hard Equality</h3>
+        <p>Soft Equality has double Equal signs <strong>==</strong> whilst Hard Equality has triple equal signs <strong>===.</strong></p>
+        
+        <h2>ARRAYS</h2>
+        <p>An array is an ordered list of values that are created by using a pair of square brackets. A constructor function, new Array()
+            can be used, how ever, a pair of square brackets [] are preferred because it involves less typing. <br>
+            The <bold>length</bold> property is used ti determine the length of an Array. The <bold>join()</bold> method can turn the array into
+            a string that compresses all items separated by commas.
+        </p>
+
+        <h2>Sets</h2>
+        <p>A set is a data structure that contains a unique set of values that cannot contain duplicates. The number of values in
+            a set can be determined using the size method.
+        </p>
+
+        <h1>Functions</h1>
+
+        <p>A function is code that can be referenced by name and is almost like a small self-contained mini-program.</p>
+
+        <h2>Defining Functions</h2>
+        <p> Functions can be defined in three main ways. They are; functional declarations, expressions and arrow methods.</p>
+
+        <h2>Invoking A function</h2>
+        <p>Invoking a function means to run a code inside the function's body. invoking is done by typing the name of the 
+            function, and followed by a parentheses. When using functions, there is no need to write repetitive blocks of code and all 
+            functionality is kept at one place. An example is; hey(). Calling the function name followed by the parentheses is invoking.
+        </p>
+
+        <h2>IReturn Values</h2>
+        <p> Return statements are used to return the value of functions. A function that does not return anything returns "undefined"
+            as default.
+        </p>
+        <h2>Parameters and Arguments</h2>
+        <p>They represent values provided for a function as an input. The difference between them are that, a parameter is the 
+            variable listed inside the parentheses in the function definition and an argument is the value that is sent to the
+            function when it is called.
+        </p>
+
+
+        <h2>Arrow Functions</h2>
+        <p>Arrow funtions were introduced in ES6. They require less typing. This function is denoted by an arrow symbol =>
+            The parameters come the arrow and then the main body follows thereafter. It is written in this manner;<br>const sqaure =x =>x8x.
+
+            <h4>Advantages of arrow Functions</h4>
+            Arrow function various benefits:
+
+They are considerably less verbose than ordinary declarations.
+Single boundaries don't require placing into enclosures.
+The body of the function doesn't require setting inside a square on the off chance that it's just a single line.
+The return keyword isn't needed on the off chance that the return  is the main assertion in the body of the function.
+They don't tie their own value of "this" to the function.
+        </p>
+
+        <h2>Callbacks</h2>
+
+        <p>A function can be given as a parameter in another function. This is called a callback. A callback is provided as a parameter and 
+            is invoked inside the funtion. This type of function should not be used often because when it is used for long function definitions,
+            it can be difficult to tell where the callback starts and ends.
+
+            Code example;<br>
+
+            function sing(song)<br> {<br>
+                console.log(`I'm singing along to ${song}`);
+            }<br>
+            
+            sing('Let It Go')<br>
+            << 'I'm singing along to Let It Go'
+        </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+
+</html>

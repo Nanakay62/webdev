@@ -1,0 +1,224 @@
+<!doctype html>
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Week 07</title>
+	</head>
+	<body>
+		<h1>Week 07Notes</h1>
+
+		<p>
+			<h2>Further Functions </h2>
+
+			In JavaScript Functions are first class objects, which means that they can be passed around like any other value. They have their own properties,
+			methods and accepts parameters. This makes it very flexible.
+
+			<h2>Call and Apply Methods </h2>
+
+			The call function can be used to set the value of <em>this</em> inside function to an object provided as a first argument. <br>
+			<br>
+			<strong>Example: </strong><br>
+			const clark = { name: 'Clark' };<br>
+const bruce = { name: 'Bruce' };<br>
+
+sayHello.call(clark);<br>
+<< 'Hello, my name is Clarke'<br>
+
+sayHello.call(bruce);<br>
+<< 'Hello, my name is Bruce'<br>
+
+
+In the example above, we created some objects that have a name property, and then used the call() method to invoke the sayHello() function, providing each object as an argument.
+
+
+			<h2>Memoization</h2>
+
+		Memoization provides result caching. Functions sometimes take a while to compute a return a value. The result can be saved in a cache property. If the same argument is used again after some time, the value can be returded from the cache rather than computing again to return the result. An example is shown below. For example, say squaring a number was an expensive computational operation that took a long time. We could rewrite the square() function so it saved each result in a cache object that is a property of the function:
+
+		function square(x){<br>
+    square.cache = square.cache || {};<br>
+    if (!square.cache[x]) {<br>
+
+        square.cache[x] = x*x;<br>
+    }<br>
+        return square.cache[x]<br>
+
+        <h5>Result</h5><br>
+        square(3);<br>
+<< 9<br>
+
+square(-11);<br>
+<< 121<br>
+
+square.cache;<br><br>
+<< {"3": 9, "-11": 121}<br>
+
+<h2>Initialization Code</h2>
+An IIFE can be used to set up any initialization code that there’ll be no need for again. Because the code is only run once, there’s no need to create any reusable, named functions, and all the variables will also be temporary. An IIFE will be invoked once, and can set up any variables, objects and event handlers when the page loads. The following example logs a welcome message to the console, then eliminates all the temporary variables used in putting the message together:
+<br>
+<br>
+(function() {<br>
+    const name = 'Peter Parker'; // This might be obtained from a cookie in reality<br>
+    const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday', 'Friday','Saturday'];<br>
+    const date = new Date(),today = days[date.getDay()];<br>
+    console.log(`Welcome back ${name}. Today is ${today}`);<br>
+
+})();<br>
+<< 'Welcome back Peter Parker. Today is Tuesday'<br>
+
+<h2>Functions that Define and Rewrite Themselves</h2>
+ Because JS functions are dynamic, they are able to define themselves, rewrite and redefine themselves again. It is achieved by assigning an anonymous function to a variable that has the same name as the said function.
+ <br>
+ Example code:<br>
+ <br>
+ function party(){<br>
+    console.log('Wow this is amazing!');<br>
+    party = function(){<br>
+        console.log('Been there, got the T-Shirt');<br>
+    }<br>
+}<br>
+This logs a message in the console, then redefines itself to log a different message in the console.
+
+<h2>Recursive Functions</h2>
+
+It is a function that invokes itself until a certain condition is met. It is useful when an iterative process is involved.<br>
+
+function factorial(n) {<br>
+    if (n === 0) {<br>
+        return 1;<br>
+    } else {<br>
+        return n * factorial(n - 1);<br>
+    }<br>
+}
+<br>
+
+This function will return 1 if 0 is provided as an argument (0 factorial is 1), otherwise it will multiply the argument by the result of invoking itself with an argument of one less. The function will continue to invoke itself until finally the argument is 0 and 1 is returned. This will result in a multiplication of 1, 2, 3 and all the numbers up to the original argument.
+
+
+<h2>Callbacks</h2>
+Callbacks can be used to facilitate event-driven asynchronous programming. JavaScript is a single-threaded environment, which means only one piece of code will ever be processed at a time. It may seem like a drawback, but non-blocking techniques can be used to ensure that the program continues to run. Instead of waiting for an event to occur, a callback can be created that’s invoked when the event happens.
+
+<h2>Callback Hell</h2>
+As asynchronous programming has become increasingly popular in JavaScript, callbacks have become more prevalent. This can lead to a jumbled and perplexing'spaghetti code.' This occurs when a function uses multiple callbacks, resulting in a large number of nested blocks that are difficult to understand.
+
+This twisted jumble of code is referred known as "callback hell."
+
+An example of such code is shown below:
+
+<br>
+<br>
+login(userName, function(error,user) {<br>
+    if(error){<br>
+        throw error;<br>
+    } else {  <br>
+        getPlayerInfo(user.id, function(error,info){<br>
+        if(error){<br>
+        throw error;<br>
+        } else {<br>
+            loadGame(info, function(error,game) {<br>
+                if(error){<br><br>
+                        throw error;<br>
+                    } else {<br>
+                    // code to run game<br>
+                }<br>
+            });<br>
+        }<br>
+        });<br>
+    }<br>
+});<br>
+
+
+<h2>Promises</h2>
+An asynchronous operation's future result is represented by a promise. Promises don't add anything to the process that callbacks couldn't, but they do help to simplify it and avoid the bloated code that can emerge from utilizing several callbacks.
+
+
+<h2>Promise Cycle</h2>
+When a promise is made, it performs an asynchronous operation and is labeled as pending. While the operations is in progress, it remains in this state. The promise is thought to be unsettled at this point. The promise is said to be settled once the surgery is accomplished. A settled promise can lead to one of two outcomes:
+
+Resolved: the asynchronous action was successfully performed.
+
+The asynchronous operation did not perform as planned, was not finished properly, or resulted in an error, hence it was rejected.
+
+Both of these outcomes will yield any necessary data, and you can act accordingly based on the promise's outcome.
+
+
+<h2>Chaining Multiple Promises</h2>
+When several asynchronous tasks must be completed one after the other, promises come into their own. We can link the then() methods together to produce a sequential piece of code that's straightforward to follow if each function that performs an asynchronous operation returns a promise. Each promise will begin only once the preceding one has been fulfilled.
+
+The player checking in to a game that caused the callback hell previously, for example, might be expressed in a much better way if promises were used:
+
+login(userName)<br>
+.then(user => getPlayerInfo(user.id))<br>
+.then(info => loadGame(info))<br>
+.catch( throw error)<br>
+
+
+
+<h2>Generalized Functions</h2>
+Callbacks can be used to create functions that are more generalized. Instead of writing numerous specialized functions, one function that accepts a callback can be written. For example, consider a function that returns a random integer between two values provided as arguments, a and b, or a random integer between 1 and the parameter provided if just one argument is provided:
+
+function random(a,b=1) {<br>
+    // if only 1 argument is provided, we need to swap the values of a and b<br>
+    if (b === 1) {<br>
+        [a,b] = [b,a];<br>
+    } <br>
+    return Math.floor((b-a+1) * Math.random()) + a;<br>
+}<br>
+
+random(6);<br>
+<< 4<br>
+
+random(10,20);<br>
+<< 13<br>
+
+<h2>Functional Programming</h2>
+A programming paradigm is functional programming. Object-oriented programming and procedural programming are two other programming paradigms. JavaScript is a multi-paradigm language, which means it can be used to program in a variety of paradigms (and occasionally a mix of them!). This freedom is appealing, but it also makes it more difficult to embrace a specific coding style because the language does not enforce the concepts. A purely functional language, such as Haskell, is significantly tighter in adhering to the concepts of functional programming.
+
+
+		</p>
+
+		<h1>AJAX</h1>
+
+		JavaScript was created as a client-side scripting language, which means it operated locally in the browser and added dynamic features to the web page sent by the server. Ajax allows JavaScript to make requests on behalf of the client to a server. Rather than a complete web page, the resources requested are frequently JSON data or short bits of text or HTML. As a result, when utilizing Ajax to access resources, a server is necessary. Typically, this entails serving the data response following an Ajax request using a server-side language such as PHP, Ruby, Node.js, or.NET (usually from a back-end database). You can either set up a local development server on your own computer or request the files from an other site to practice with Ajax.
+
+		<h2>The Fetch API</h2>
+
+		Despite being developed by Microsoft many years ago and being available in most browsers, the WHATWG and W3C eventually standardized the XMLHttpRequest object as part of the HTML5 specification.
+
+It has now been supplanted by the Fetch API, which is now the de facto standard for asynchronously requesting and transmitting data across a network. The Fetch API avoids callback hell by using promises, and it also simplifies a number of concepts that were previously hard when using the XMLHttpRequest object.
+
+The global fetch() method in the Fetch API takes only one necessary argument: the URL of the resource you want to fetch. A simple example would be the following line of code: fetch('https://example.com/data')
+.then( // code that handles the response )
+.catch( // code that runs if the server returns an error )
+
+
+<h2>The Response Interface</h2>
+he Fetch API introduced the Response interface that deals with the object that’s returned when the promise is fulfilled. Response objects have a number of properties and methods that allow us to process the response effectively.
+
+For example, each response object has an ok property that checks to see if the response is successful. This is based on the HTTP status code, which can be accessed using the status property. This will usually be 200 if the response was successful, 201 if a resource was created, or 204 when the request is successful but no content is returned. The ok property will return true if the status property is between 200 and 299. We need to manually check if this happens because the promise will only be rejected in the case of a network error, rather than something like a '404 page not found error', which is still considered a successful request in terms of the promise.
+
+
+<h2>JSON Responses</h2>
+For AJAX answers, JSON is perhaps the most popular format. To deal with this, the json() method converts a stream of JSON data into a promise that resolves to a JavaScript object.
+
+Here's an example of how to resolve a JSON response promise:
+fetch(url)<br>
+.then( response => response.json() ); // transforms the JSON data into a JavaScript object<br>
+.then( data => console.log(Object.entries(data)) )<br>
+.catch( error => console.log('There was an error: ', error))<br>
+
+It is worth noting that AJAX can be used for sending and receiving information.
+
+<br>
+<em>Form Data</em>
+The FormData interface is part of the Fetch API, and it makes it much easier to submit data in forms using Ajax.
+
+A constructor function is used to build a FormData instance:
+
+If a form is supplied as an argument to this constructor function, the form data instance will automatically serialize all of the data, making it ready to be delivered using Ajax. In the last example, we manually constructed the task based on the information provided in the form. When submitting forms, the FormData interface helps to reduce the amount of code required.
+
+
+	</body>
+	</html>

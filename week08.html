@@ -1,0 +1,138 @@
+<!doctype html>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>TRANSFORMS</title>
+	</head>
+	<body>
+		<h2> Transforms </h2>
+		<p>The CSS transforms property allows users to transform, scale, rotate and skew elements on a webpage. The appearance of an element can be manipulated using css transforms.
+
+
+			<h2>Translation</h2>
+			This function allows one to move an element up, down, left or right. It has behavioral similarities to <em>position:relative.</em> The advantage that this function has over <em>position:relative;</em> is,it does not impact the flow of the document.A translated element can be moved relative to its current position, whereas a <em>position:relative;</em> allows one to position an element against its current direction or against a parent or ancestor.
+
+			If one wants to move an element horizontally or vertically, one should use the <em>translateX <strong>tranlateX(50px)<strong>and translateY<strong>translateY(15px)</strong></em> functions.
+
+			<h2 class="scale">Scaling</h2>
+			The scale(x,y) function scales an element by the defined factors horizontally first and then vertically. If only one value is provided, it will be used for both the x and y values, growing or shrinking your element or pseudo-element while maintaining the original aspect ratio. For example, scale(1) would leave the element the same size, scale(2) would double its proportions, scale(0.5) would halve them, and so on. Providing different values will distort the element. The scale function increases or diminishes just the x or y axis. They grow and shrink from the center. However, this can be changed by using the <em><strong>transform-origin</strong></em> element.Like translation, scaaling has no impact on document flow. This may be a problem because one aspect of an element may outgrow the others it is in line with. This can be adjsuted using the <em>font-size, height and width.</em>
+
+			<h2 class="rotate">Rotation</h2>
+			The rotate() element rotates an element on its axis, whose point of origin is its center. Rotation is performed using degrees. Radians can be used as well. A positive degree entered into the rotation function rotates it in a clockwise direction, a negative degree moves it anti-clockwise.
+
+
+			<h2>Changing the Origin of The Transform</h2>
+
+			The point of origin where transforms can be applied can be controlled using the <em>transforms-origin.</em>
+
+			<h2 class="transition"><Transitions/h2>
+				Transitions make CSS properties change overtime. This is usually used with the pseudo-class, hover. It can be used along with other transforms.
+				A simple transition can be created by declaring the original state of the function, declare the final state of the transitioned element, and then include transition functions to the default style declaration using the transition properties.The transition-property property defines the CSS properties of the element that should be transitioned, with all for all properties being the default.
+
+				<h2>Transition-Duration</h2>
+				This specifies the anount of time an element will take to go from a default state to a transitioned state. The duration can be specified in seconds(s)or milliseconds(ms).
+
+				<h2>Transition Timing Function</h2>
+				This lets one control the pace of a transition in more granular detail. The default function for this is <em>ease</em>, but there are others like, <em>ease-in, ease-out,</em> and <em>linear.</em> This timing can also done in special detail, using the <em>cubic bezier</em> function. It accepts four numeric parameters, like so <em>cubic bezeir(0,1,2,3).
+
+
+					<h2>The transition Shorthand Property</h2>
+
+					The <em>transition</em> property is the shorthand for all transtition elements. An example will be <em><strong>transition: transform, 0.2s ease-out, 0.5s</strong></em>
+
+					<h2>Animations</h2>
+
+					CSS Animations are more advanced than CSS transitions. They allow a user to have control of the entire movement of an object. With animations, only the start and end phases of an elements movement in control, but not in the intermediate. Animations provide this power by using <em><strong>keyframes.</strong></em>
+
+					<h2>Keyframes</h2>
+
+					To create an animation in HTML, a name would first be created and then it is attached to an element in that element's property. Animation names should not be quoted. In animations, there are 2(two) key terms which represent 0% and 100%. They are <em>from and to</em>.
+
+					An example of animation is:
+					@keyframes moveRight { <br>
+    from {<br>
+    transform: translateX(-50%);<br>
+    }<br>
+    to {<br>
+    transform: translateX(50%);<br>
+    }<br>
+}<br>
+
+@keyframes appearDisappear { <br>
+    0%, 100% {<br>
+    opacity: 0;<br>
+    }<br>
+    20%, 80% {<br>
+    opacity: 1;<br>
+    }<br>
+}<br>
+
+@keyframes bgMove {<br>
+    100% {<br>
+    background-position: 120% 0;<br>
+    }<br>
+}<br>
+
+
+
+<h1>Canvas, SVG, and Drag and Drop</h1>
+
+With HTML5's Canvas API, we can draw anything we can envision, all through JavaScript. This can work on the exhibition of our sites by staying away from the need to download pictures off the organization. With canvas, we can draw shapes and lines, circular segments and text, angles and examples. Furthermore, canvas empowers us to control pixels in pictures and even video.
+
+<br>
+To use canvas, the <em>canvas</em> element must be added to the webpage. The text written between the open and closed canvas elements will only be displayed if the canvas is not supported. All drawing on the canvas happens via the Canvas JavaScript API.  In the HTML5 canvas, you must first saturate your brush with paint before you can begin.
+
+<h2>Drawing Other Shapes by Creating Paths</h2>
+There is no built-in mechanism for drawing circles or other forms, unlike rectangles and squares. We must first sketch down the course of the shape in order to draw more fascinating shapes.
+
+Paths serve as a template for your lines, arcs, and shapes, but they remain unseen until you stroke them! We set the strokeStyle first, then called fillRect to draw rectangles. We need to take three steps with more complex shapes: draw out the path, stroke the path, and fill the path. We can stroke or fill the route, just like we can with rectangles, or we can do both.
+<br>
+
+<strong>Ps: Radians</strong><br>
+Radians are a unit used to measure angles, and the symbol π denotes a measurement in radians. One radian is equal to 180 degrees. Two radians, or 2π, are equal to 360 degrees.
+
+
+<h2>Saving Canvas Drawings</h2>
+
+If we generate an image programmatically with the Canvas API and then decide we want a local copy of our painting, we can save it using the API's toDataURL method. toDataURL generates a URL that includes the image (either a png or jpg, whichever is specified). The image at this URL can then be saved as a PNG or JPEG by right-clicking it and saving it as a PNG or JPEG.
+
+<h2>Manipulating Images</h2>
+It's not that thrilling to redraw an image element from a page into a canvas. It's much the same as using an image element. It's when we start manipulating a picture after we've drawn it onto the canvas that things start to get interesting.
+
+After we've painted an image on the canvas, we can use the Canvas API's getImageData method to edit the picture's pixels. For instance, if we wanted to convert our logo from color to black and white, we could use the Canvas API's functions.
+
+The ImageData object returned by getImageData has three properties: width, height, and data.
+
+<h2>Manipulating Video with Canvas</h2>
+
+The code we already wrote to convert a color image to black and white and improve it to turn our color movie black and white to match The HTML5 Herald page's old-timey feel This will be done in a new JavaScript file named videoToBW.js, which will be included on the site's home page.
+
+As usual, the file begins by establishing the canvas and context: <br>
+<strong>
+function makeVideoOldTimey() { <br>
+    var video = document.getElementById("video");<br>
+    var canvas = document.getElementById("canvasOverlay"); <br>
+    var context = canvas.getContext("2d");<br>
+}
+</strong>
+
+<h2>SVG</h2>
+
+Scalable Vector Drawings (SVG) is a file format that allows you to use XML to describe vector graphics. Unlike bitmap pictures (such as GIF, JPEG, PNG, and TIFF), vector graphics maintain their quality when blown up or down. Many of the same activities that we can do with canvas can be done with SVG, including drawing pathways, shapes, text, gradients, and patterns. There are also a number of SVG-related open-source tools, some of which we'll utilize to add a spinning progress indication to The HTML5 Herald's geolocation widget.
+
+
+<h2>XML</h2>
+eXtensible Markup Language is the abbreviation for xml Based Language. It's a markup metalanguage, just like HTML. In plain English, it's a text annotation system. XML tags can be used to describe data, such as the content of a file, in the same way that HTML tags can be used to enclose text and give it meaning.
+Unlike canvas, SVG images are accessible through the DOM. This allows screen readers and other technologies to see what's in an SVG object via its DOM node, as well as allowing you to investigate SVG using your browser's developer tools. SVG is also more search engine friendly than canvas because it is an XML file format.
+		</p>
+
+		<h2>Canvas versus SVG</h2>
+
+		As we observed when we converted our video from color to black and white, canvas enables for pixel manipulation. One disadvantage of canvas is that it functions in "instant mode." When you complete drawing a shape, the canvas loses access to it because it doesn't remain as an object that can be modified.
+The DOM also has no access to what's drawn on the canvas. As a result, canvas is substantially faster than SVG (here's an example of a performance comparison), and canvas is generally the superior choice if you're designing a game with a lot of animations.
+What you draw to SVG, on the other hand, is accessible via the DOM because its mode is retained mode, which means the image's structure is preserved in the XML document that describes it. SVG also has a more comprehensive collection of tools for working with it at the moment, such as the Raphael library and Inkscape.
+	
+	</body>
+	</html>

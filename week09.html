@@ -1,0 +1,126 @@
+<!doctype html>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>WEEK 09 NOTES</title>
+	</head>
+	<body>
+
+		<p>
+			<h1>The Window Object</h1>
+			<h2>Going Global</h2>
+
+			Global variables are ones that are created without the <em>let, var and const</em> keywords. Global variables can be accessed at all aspects of the program. Generally, global properties can be referred to without using the <em>window</em> object. The only exception to the rule is if you have to check if a global variable has been defined. For example <strong><em>if (x) {}</em></strong> will throw an error. If the code is however accessed as a property of the window object, the code will work. It would be written this way; <strong><em>if (window.x) {}</em></strong><br>
+			Functions like <em>parseInt()</em> and <em>isNan</em> are methods of a global object. A browser environment makes them methods of a <em>window object.</em> Just like variables, it is customary to avoid accessing them through the <em>window</em> object.
+
+			<h2>Dialogs</h2>
+			There are three functions that are commonly used as dialogs. They are <em><strong>alert(), confirm() and prompt()</strong></em> although they are not part of the ECMAScript standard. All browsers support them as part of the <em>windows</em> object, regardless.
+
+			<em>alert() </em> stops the execution of a program to display a dialog box that displays a message and returns <em>undefined.</em> <br>The <em>confirm</em> function follows the same process of stopping the execution of a program to display a dialog box that displays a message that has options of OK and Cancel. Clicking OK returns the boolean value <em>true</em>, clicking Cancel will return the Boolean value <em>false.</em> <br> <em>prompt() function </em> follows the same process, and displays a dialog box with an input box that requires a user to enter a string or number value to be returned. 
+
+			<h2>Browser Information</h2>
+			The <em>window</em> object has properties and methods that provide the user details about the browser. The window object has a <em>navigator </em>property that returns a reference property <em>Navigator.</em> The <em>Navigator </em>object contains information about the browser being used. Its <em>userAgent</em> property returns information about the OS and browser being used.
+
+			<h2>Location</h2>
+			The <em>window.location,</em> an object that contains details of the URL of a current page. It is a read and write property, thus, it can be changed by assignment. 
+			<h2>Browser History</h2>
+			<em>window.history </em>property is used to retrieve information about previously visited pages. The window.history.length shows the number of pages that have been visited before the current page. window.history.go method can be used to go to a specific page. The <em>window.history.forward and window.history.backwards</em> can be used to navigate foward and backwards.
+
+			<h2>Controlling Windows</h2>
+			The <em>windows.open()</em> method takes the URL to be opened as its first paraemeter and the window title as its second parameter, and a list of atrributes. The close() method is used to close a browser window. You can resize a window using the window.resizeTo() method and it is also possible to move a window using the window.moveTo() method
+			<br>
+			The window.screen contains information about the screenn that the browser is displayed on. The width and height can be found out with the width and height properties respectively.
+
+			<h2>The Document Object</h2>
+			Each window object contains the document object.his object has properties and methods that deal with the page that has been loaded into the window.
+			The write() method simply writes a string of text to the page. If a page has already loaded, it will completely replace the current document <em>document.write('Hello, world!');</em>
+
+			The use of document.write() is heavily frowned upon as it can only be realistically used by mixing JavaScript within an HTML document. There are still some extremely rare legitimate uses of it, but a programmer will hardly ever need to use it.
+
+			<h2>Creating Cookies</h2>
+			To create a cookie, you assign it to JavaScript’s “cookie jar”, using the document.cookie property.
+
+			Changing Cookie Values
+			A cookie’s value can be changed by reassigning it to document.cookie using the same name but a different value. The following code will update the value of two of the cookies that we set in the previous section:
+
+
+			document.cookie = 'name=Batman'<br>
+			<< "name=Batman"<br>
+			document.cookie = 'city=Gotham'<br>
+			<< "city=Gotham"<br>
+			Reading Cookies<br>
+			To see the current contents of the cookie jar, simply enter document.cookie:<br>
+
+			document.cookie:<br>
+			<< "name=Batman; hero=true; city=Gotham"<br>
+			We can use the split method to break the string into an array containing each name/value pair, then use a for of loop to iterate through the array:<br>
+
+			const cookies = document.cookie.split("; ");<br>
+			for (crumb of cookies){<br>
+			    const [key,value] = crumb.split("=");<br>
+			    console.log(`The value of ${key} is ${value}`);<br>
+			}<br>
+			<< The value of name is Batman<br>
+			The value of hero is true<br>
+			The value of city is Gotham<br>
+			To see an example of cookies used in the wild, you can visit almost any website, open the browser console, and type document.cookie.<br>
+
+			Cookie Expiry Dates<br>
+			Cookies are session cookies by default. This means they are deleted once a browser session is finished (when the user closes the browser tab or window).<br> Cookies can be made persistent ― that is, lasting beyond the browser session ― by adding "; expires=date" to the end of the cookie when it’s set,<br>where date is a date value in the UTC String format Day, DD-Mon-YYYY HH:MM:SS GMT. The following example sets a cookie to expire in one day’s time:<br>
+
+			<h1>HTML 5</h1>
+			The HTML5 specification is separated into modules that allow different features to be developed at different paces then implemented without having to wait for other features to be completed. It also means that when a previously unforeseen development occurs, a new module can be created to cater for it. Modules can be at different stages of maturity, from ideas to full implementation. 
+
+			<h2>The Data Attribute</h2>
+
+			The data- attribute is a way of embedding data in a web page using custom attributes that are ignored by the browser. They’re also private to a page, so are not intended to be used by an external service – their sole purpose is to be used by a JavaScript program. This means they’re perfect for adding data that can be used as a hook that the program utilizes to access information about a particular element on the page.
+
+			The names of these attributes can be decided by the developer, but they must use the following format:
+
+			Start with data-.
+
+			Contain only lowercase letters, numbers, hyphens, dots, colons or underscores.
+
+			Include an optional string value.
+
+			<h2>HTML5 APIs</h2>
+
+			The HTML5 specification contains a number of APIs that help to gain access to hardware, such as cameras, batteries, geolocation, and the graphics card. Hardware evolves quickly, and APIs are frequently introduced to give developers access, and control new features that appear in the latest devices.
+
+
+			<h2>HTML 5 Webstorage</h2>
+
+			Information can be stored using the localStorage.setItem() and it can be retrieved using the getItem(). However, there is a better way to do it now.
+			The local storage plus the dot notation and the name, like so localStorage.name ="Nana Kwame Dickson". It can be retrieved as console.log(localStorage.name), which will result in = "Nana Kwame Dickson". It can be deleted with <em>delete localStorage.name and cleared with clear localStorage.name</em>.
+
+			Every time a value is saved to local storage, a storage event is fired. Note that this event is only fired on any other windows or tabs from the same domain, and only if the value of the item being saved changes.
+
+
+			<h2>Geolocation</h2>
+
+			The Geolocation API is used to get the geographical position of a device. This means, a users exact location can be found and then the us.
+			is information can then be used to filter data based on the user's location or speed and direction of travel. An example of this might be a search function that returns results based on your location. Because of privacy concerns, permission to use this has to be granted by the user first.
+
+			<h2>Web Workers</h2>
+
+			 Web workers allow processes to be run in the background, adding support for concurrency in JavaScript. The idea is that any processes that could take a long time are carried out in the background, so a website will continue to function without fear of the dreaded 'script has become unresponsive' message that occurs when a script runs for too long.
+
+			 <h2>Shared Web Workers</h2>
+			 Web workers allow computationally complex operations to be performed in a separate thread, meaning that the flow of a program won’t suffer interruptions, and an application will not freeze or hang. They are a useful feature that help to keep sites responsive, even when complicated operations are being carried out.
+
+			 <h2>Service Workers</h2>
+			 The Service Worker API allows a worker script to run in the background with the added benefit of being able to intercept network requests. This allows you to take alternative action if the network is offline, and effectively create app-like offline experiences. Service workers also allow access to push notifications and background syncing.
+
+			 <h2>Multimedia</h2>
+			 Before HTML5, it was notoriously difficult to display audio and video in browsers, and plugins such as Flash often had to be used. HTML5 introduced the <audio> and <video> tags used to insert audio and video clips into a web page. It also introduced a Media API for controlling the playback of the clips using JavaScript.
+
+			 	<h2>Drawing with Canvas</h2>
+
+			 	The canvas element was introduced to allow graphics to be drawn onto a web page in real time using JavaScript. A canvas element is a rectangular element on the web page. It has a coordinate system that starts at (0,0) in the top-left corner. To add a canvas element to a page, the <canvas> tag is used specifying a height and width.
+
+		</p>			
+	
+	</body>
+	</html>

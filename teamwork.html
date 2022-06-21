@@ -1,0 +1,58 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>TeamWork 08</title>
+
+		<style>
+			h1 {
+				background: pink ;
+				font-family: helvetica;
+			}
+
+			body {
+				background: antiquewhite;
+		}
+
+			 
+		</style>
+	</head>
+	<body>
+		<div>
+			<h1> W08 Team Activity</h1>
+			<p id ="jsonRaw">
+			<table id ="characTable" class="tableBorder" style="width:100%, padding:20px" > 
+				<thead>
+					<tr>
+						<th class="tableBorder">Character</th>
+						<th class="tableBorder">Display Details</th>
+						<th class="tableBorder">Details</th>
+					</tr>
+				</thead>
+				<tbody id="characTableBody"></tbody>
+			</table>
+			<button id="prevBtn" onclick=" ">Previous</button>
+			<button id = "nextBtn" onclick=" ">Next</button>
+			</p>
+		</div>
+
+		<div id = "detailsMod" class="Mod">
+			<span class="close" title="Close Mod" onclick=" "></span>
+			<div class="mod-content">
+				<div class="details" id="details"></div>
+
+			</div>
+		</div>
+
+		<div id="detailsbox" class="hidden">
+        <dl>
+          <dt>Name:</dt>
+          <dd class="name"></dd>
+          <dt>Model:</dt>
+          <dd class="model"></dd>
+        </dl>
+      </div>
+		<script src="starwars.js"></script>
+	</body>
+	</html>

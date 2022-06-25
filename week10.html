@@ -1,0 +1,107 @@
+<!doctype html>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>WEEK 10 NOTES</title>
+	</head>
+	<body>
+		<h1> Form Validation</h1>
+		<p>
+			Client-side validation is one of the methods that ensures that users enter the correct information needed of them. If invalid, it is immediately known to them. This is faster than server-side validation, but has security limitations. Server-side validation is a bit longer than the client-side because the user input has to be sent to the server. If it is incorrect, it has to be routed back from the server to the user. However, it is more secure than the client-side validation.
+
+			<h2>What is data validation?</h2>
+			This is what happens when an application checks to ensure that data has been inputted in the correct format. If it is not, and error message is shown or the user is prompted to enter data in the correct format. Validation done in the browser is client-side validation, while validation done on the server is called server-side validation.
+			<br>
+			If information entered is valid, the browser sends it to the server, else it will throw a message indicating what needs to be changed. In this instance, the information will not be sent to the server, until the error is corrected.
+
+			<h2>Different types of client side validation</h2>
+			The first is <strong>built in form validation.</strong> This uses HTML5 form validation features. It performs better than JavaScript, but is less customizable.
+			The second is <strong>JavaScript.</strong> This is built by using the JS programming language or library. It is fully customizable.
+
+			<h2>Using Built-In Form Validation</h2>
+			Forms can be validated using the attributes on the form element. Examples include; <em>required, minlength and maxlength(number of text values), min and max(specifies the min and max number of numerical values), and patterns which specifies a regular expression or regex.</em> 
+			When an element is valid the <em>:valid</em> pseudoclass lets one apply a specific style to HTML elements. The browser will then send the information to the server, provided there is nothing stopping it from doing so.
+			<br>
+			<strong>Code Example</strong>
+			<br>
+			<strong> form
+  label for="choose">Would you prefer a banana or cherry?label<br>
+  input id="choose" name="i_like"><br>
+  button>Submit button<br>
+form 
+CSS<br>
+input:invalid {<br>
+
+  border: 2px dashed red;<br>
+}<br>
+
+input:valid {<br>
+  border: 2px solid black;<br>
+}<br>
+
+</strong>
+
+
+		<h2>The required attribute</h2>
+		This makes input of information in an input field mandatory. A form will not be submitted if it is left empty. It will be considered invalid. When used with CSS, an invalid text field will display a color at the border or within the textbox if programmed to.
+
+		<h2>Validating against a regular expression</h2>
+		Regular expressions ensure that a user inputs data that follows a paticular format. It also serves other uses in JavaScript.
+		An example is; <strong>input id="choose" name="i_like" required pattern="[Bb]anana|[Cc]herry</strong>.
+
+
+		<h2> Constraining length and values of entries</h2>
+		You can constrain the character length of all text fields created by <em>input</em> or <em>textarea</em> by using the minlength and maxlength attributes. A field is invalid if it has a value and that value has fewer characters than the minlength value or more than the maxlength value.
+		For number fields (i.e. input type="number">), the min and max attributes can be used to provide a range of valid values. If the field contains a value outside this range, it will be invalid.
+
+
+		<h2>Validating forms using JavScript</h2>
+		JavaScript should be used if one wants to take control over the look and feel of native error messages or to deal with legacy browsers that do not support HTML's built-in form validation. validationMessage: Returns a localized message describing the validation constraints that the control doesn't satisfy (if any). If the control is not a candidate for constraint validation (willValidate is false) or the element's value satisfies its constraints (is valid), this will return an empty string.
+validity: Returns a ValidityState object that contains several properties describing the validity state of the element. You can find full details of all the available properties in the ValidityState reference page; below is listed a few of the more common ones:
+patternMismatch: Returns true if the value does not match the specified pattern, and false if it does match. If true, the element matches the :invalid CSS pseudo-class.
+tooLong: Returns true if the value is longer than the maximum length specified by the maxlength attribute, or false if it is shorter than or equal to the maximum. If true, the element matches the :invalid CSS pseudo-class and more...
+
+
+<h2>Implementing a Customized Error Message</h2>
+With HTML5, the message displayed when there is an error cannot be customized. That is its limitation. However, with JS, it is possible to customize it and style it to appear how one wants it.
+
+ JavaScript uses the novalidate attribute to turn off the browser's automatic validation; this lets our script take control over validation. However, this doesn't disable support for the constraint validation API nor the application of CSS pseudo-classes like :valid, etc. That means that even though the browser doesn't automatically check the validity of the form before sending its data, you can still do it yourself and style the form accordingly.
+
+ <h2>Validating forms without a built-in API</h2>
+
+ Some legacy browsers do not allow Constraint Validation API, hence it is imperative that one writes their own code. It is advised that one asks questions when making decisions to write a custom validation code. Some questions to ask are; <em><strong>What kind of validation should I perform?, what should I do if the form does not validate? how can I help the user to correct invalid data? </strong></em>
+
+
+ <h1>Using the Fetch API</h1>
+ The Fetch API provides a JavaScript interface for accessing and manipulating parts of the HTTP pipeline, such as requests and responses. It also provides a global fetch() method that provides an easy, logical way to fetch resources asynchronously across the network.
+ Fetch provides a better alternative that can be easily used by other technologies such as Service Workers. Fetch also provides a single logical place to define other HTTP-related concepts such as CORS and extensions to HTTP.
+
+
+ <h2>Sending a request with credentials included</h2>
+ To cause browsers to send a request with credentials included on both same-origin and cross-origin calls, add credentials: 'include' to the init object you pass to the fetch() method
+
+ <h2>Uploading Files</h2>
+ Files can be uploaded using an HTML <input type="file" multiple /> input element, FormData() and fetch().
+
+ <h2>Processing a text file line by line</h2>
+ The pieces that are perused from a reaction are not broken flawlessly at line limits and are Uint8Arrays, not strings. If you have any desire to get a text document and interaction it line by line, it ultimately depends on you to deal with these difficulties. The accompanying model shows one method for doing this by making a line iterator
+
+ <h2>Checking that the fetch was successful</h2>
+ A fetch() promise will dismiss with a TypeError when an organization blunder is experienced or CORS is misconfigured on the server-side, albeit this typically implies consent issues or comparative — a 404 doesn't comprise an organization mistake, for instance. An exact check for a fruitful bring() would incorporate making sure that the commitment settled, then, at that point, making sure that the Response.ok property has a worth of valid.
+
+
+
+
+
+
+
+
+
+
+
+		</p>
+	
+	</body>
+	</html>

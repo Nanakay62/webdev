@@ -5,7 +5,7 @@ body {
 	height: 100vh;
 	margin: 0;
 	background: #222;
-	background-image: url('https://th.bing.com/th/id/R.7f9c12021143b86ce1aa737dd0d3468d?rik=V8STK62kC6gxPA&pid=ImgRaw&r=0');
+	background-image: url('https://media1.giphy.com/media/9keMksNoYSs12/giphy.gif?cid=ecf05e47asmtbi3whu1atcsohvh568ovmtnc13v2vb08otih&rid=giphy.gif&ct=g');
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -62,4 +62,8 @@ body {
     border-radius: 
     2px; color:darkgrey;
     border:1px solid #f1f1f1;
+   }
+
+   .pTitle{
+    align-items: center;
    }

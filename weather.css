@@ -5,17 +5,20 @@ body {
 	height: 100vh;
 	margin: 0;
 	background: #222;
-	background-image: url('https://th.bing.com/th/id/R.7f9c12021143b86ce1aa737dd0d3468d?rik=V8STK62kC6gxPA&pid=ImgRaw&r=0');
+	/*background-image: url('https://th.bing.com/th/id/R.7f9c12021143b86ce1aa737dd0d3468d?rik=V8STK62kC6gxPA&pid=ImgRaw&r=0');*/
+	background-image: url('https://media2.giphy.com/media/yse8MzKv61jlC/giphy.gif?cid=ecf05e471ej289bacmt1ei1lye86i304vw9f4p8hw8wobiq2&rid=giphy.gif&ct=g');
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
+
+
 .card {
 	background: #000000d0;
 	color: white;
-	padding: 2em;
+	padding: 4em;
 	border-radius: 30px;
-	width: 50%;
+	width: 30%;
 	border-width: 420px;
 	margin: 1em;
 	font-family: 'Nunito Sans', sans-serif;
@@ -66,4 +69,14 @@ h5 {
 .flex{
 	display: flex;
 	align-items: center;
+}
+
+.temp{
+	font-weight: bolder;
+	font-size: 35px;
+	opacity: 0.9;
+}
+
+h3 {
+	color: aqua;
 }

@@ -12,14 +12,17 @@
 		<title>WeatherAPP</title>
 	</head>
 	<body>
-		<div class="card">
+		<div class="card" id="search-card">
 			<div class="search">
-				<input type="text" name="searchbox" class="search-bar" placeholder="Search...">
+				<input type="text" name="searchbox" class="search-bar" id="searcher" placeholder="Search...">
 				<button>🔍</button>
 			</div>
+			<div>
+				<button type="button" class="submit" id="history" onclick="">Save</button>
+			</div>
 			<div class="weather">
-				<h2 class="city">Weather in Accra</h2>
-				<div class="temp"><h1>21°C</h1></div>
+				<h1 class="city">Weather in Accra</h1>
+				<div class="temp"><h2>21°C</h2></div>
 				<div class="flex">
 				<img src="" alt="" class="icon">
 				<div class="description">Cloudy</div>
@@ -27,6 +30,7 @@
 				<div class="humidity">Humid: 53% </div>
 				<div class="wind"> Wind Speed: 6.2 km/h</div>
 			</div>
+			<ul id="historyList"></ul>
 		</div>
 	</body>
 	</html>

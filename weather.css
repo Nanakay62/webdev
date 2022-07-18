@@ -58,7 +58,7 @@ button:hover {
 	transition: .5s ease-in-out;
 }
 
-h5 {
+p,h5 {
 	color: aqua;
 }
 
@@ -72,11 +72,38 @@ h5 {
 }
 
 .temp{
-	font-weight: bolder;
-	font-size: 35px;
+	font-weight: bold;
+	font-size: 28px;
 	opacity: 0.9;
 }
 
 h3 {
 	color: aqua;
 }
+
+#historyList{
+	color: aquamarine;
+}
+
+@media only screen and (min-width:50px) {
+  
+
+
+	.search-bar .search{
+	 width: 100%;
+	 padding: auto;
+	 overflow: hidden;
+	 display: inline-block;
+	}
+ 
+	.search-bar .input .search{
+	 width: auto;
+	 height:28px;
+	 border:1px solid #27a465; 
+	 color:#2a3644; 
+	 font-weight:bold; 
+	 border-left:5px solid #f7f7f7; 
+	 opacity:0.9;
+	 border-radius: 10px;
+	}
+   }

@@ -89,14 +89,14 @@ h3 {
   
 
 
-	.search-bar .search{
+	.search-bar{
 	 width: 100%;
 	 padding: auto;
 	 overflow: hidden;
 	 display: inline-block;
 	}
  
-	.search-bar .input .search{
+	.search-bar .input {
 	 width: auto;
 	 height:28px;
 	 border:1px solid #27a465; 

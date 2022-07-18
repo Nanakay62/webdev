@@ -8,6 +8,7 @@ body {
 	background-image: url('https://media1.giphy.com/media/9keMksNoYSs12/giphy.gif?cid=ecf05e47asmtbi3whu1atcsohvh568ovmtnc13v2vb08otih&rid=giphy.gif&ct=g');
 	background-repeat: no-repeat;
 	background-size: cover;
+  background-position: center center;
 }
 
    #main

@@ -72,30 +72,31 @@ body {
 
   
 
-   @media only screen and (max-width:720px) {
+   @media only screen and (max-width:100px) {
 
-    .login input {
-      width: 150px;
+    tr {
+      width: 20px;
       padding: 5px;
       margin: 0;
       border: 1px solid blue;
       border-radius: 5px;
     }
     #main{
-      width: 70%;
+      width: 120%;
      }
   }
    
-  @media only screen and (min-width:720px) {
-      .login input {
+  @media only screen and (min-width:100px) {
+    tr {
     height: 50px;
-      padding: 10px;
+    padding: 10px;
     margin: 5px 0;
     border: 1px solid blue;
     border-radius: 5px;
    }
 
+
    #main{
-    width: 70%;
+    width: 120%;
    }
   }

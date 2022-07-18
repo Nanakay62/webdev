@@ -72,31 +72,37 @@ body {
 
   
 
-   @media only screen and (max-width:100px) {
+   @media only screen and (max-width:50px) {
 
-    tr {
-      width: 20px;
-      padding: 5px;
-      margin: 0;
-      border: 1px solid blue;
-      border-radius: 5px;
-    }
+    
     #main{
-      width: 120%;
+      width: 100%;
+      padding: auto;
+      overflow: hidden;
+    display: inline-block;
+
      }
   }
    
-  @media only screen and (min-width:100px) {
-    tr {
-    height: 50px;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid blue;
-    border-radius: 5px;
-   }
+  @media only screen and (min-width:50px) {
+  
 
 
    #main{
-    width: 120%;
+    width: 100%;
+    padding: auto;
+    overflow: hidden;
+    display: inline-block;
+   }
+
+   #main .tb {
+    width: auto;
+    height:28px;
+    border:1px solid #27a465; 
+    color:#2a3644; 
+    font-weight:bold; 
+    border-left:5px solid #f7f7f7; 
+    opacity:0.9;
+    border-radius: 10px;
    }
   }

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!-- Requirement 1 -->
+        <input id="input1" type="text">
+        <button type="button" onclick="readDiv()">Check 1</button>
+        <div id="displayText">
+
+           <!-- Requirement 2 -->
+           <input id="input2" type="number">
+           <button type="button" onclick="readDiv2()">Check 2</button>
+           <div id="displayText2">
+
+            <!-- Requirement 3 -->
+           <input id="input3" type="number">
+           <input id="input4" type="number">
+           <button type="button" onclick="addition()">+</button>
+           <button type="button" onclick="multiply()">*</button>
+           <button type="button" onclick="subtraction()">-</button>
+           <div id="displayText3">
+
+               <!--Stretch 1 and 3 -->
+           <input id="input5" type="number">
+           <input id="input6" type="number">
+           <button type="button" onclick="calculator(sum2Nums)">+</button>
+           <button type="button" onclick="calculator(mult2Nums)">*</button>
+           <button type="button" onclick="calculator(minus2nums)">-</button>
+           <div id="displayText4">
+               
+
+        </div>
+        <script>
+            function readDiv() {
+                let inputValue = document.getElementById("input1").value
+                if (inputValue !== NaN) {
+                    document.getElementById("displayText").innerHTML = inputValue;
+                }
+            }
+            function readDiv2() {
+                let inputValue =parseInt(document.getElementById("input2").value)
+                let sumValues = sumNums(inputValue)
+                document.getElementById("displayText2").innerHTML = sumValues;
+            }
+            function sumNums(num) {
+                let count = 0
+                for (let i = num; i > 0; i--) {
+                    count+=i;
+                }
+                return count
+            }
+// stretch
+function sum2Nums(num1,num2) {
+                return num1+num2
+            }
+
+            const minus2nums = (num1,num2) => num1 - num2;
+            const mult2Nums = function (num1,num2) {
+                return num1*num2;
+            }
+            function subtraction() {
+                let inputValue1 = parseInt(document.getElementById("input3").value)
+                let inputValue2 = parseInt(document.getElementById("input4").value)
+                let subtractValues = minus2nums(inputValue1,inputValue2)
+                document.getElementById("displayText3").innerHTML = subtractValues;
+            }
+            function multiply() {
+                let inputValue1 = parseInt(document.getElementById("input3").value)
+                let inputValue2 = parseInt(document.getElementById("input4").value)
+                let multiplyValues = mult2Nums(inputValue1,inputValue2)
+                document.getElementById("displayText3").innerHTML = multiplyValues;
+            }
+             function addition() {
+                let inputValue1 = parseInt(document.getElementById("input3").value)
+                let inputValue2 = parseInt(document.getElementById("input4").value)
+                let sumValues = sum2Nums(inputValue1,inputValue2)
+                document.getElementById("displayText3").innerHTML = sumValues;
+            }
+          //callback
+            function getInputValues(numId) {
+                let inputValue = parseInt(document.getElementById(numId).value)
+                if (inputValue !== NaN) {
+                    return inputValue
+                }
+               return 0;
+            }
+            function calculator(operator) {
+              let total = operator(getInputValues('input5'),getInputValues('input6'))
+              document.getElementById("displayText4").innerHTML = total;
+            }
+        </script>
+    </body>
+</html>
